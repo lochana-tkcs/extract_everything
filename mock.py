@@ -79,7 +79,8 @@ def extract_from_image(base64_img):
             {
                 "role": "user",
                 "content": [
-                    {"type": "text", "text": f"You will be given an image to analyze. Your task is to extract ANY and ALL meaningful information (INCLUDING ALL METADATA PRESENT IN THE IMAGE) from the image and present it in a structured tabular format as much as possible. Each identified table or structured information is a list of dictionaries, and each dictionary represents a single row by mapping column names (keys) to their corresponding cell values (values). If a table is identified, then the table is a list of dictionaries where each each dictionary is a row of the table"},
+                    {"type": "text", "text": f"""You will be given an image to analyze. Your task is to extract ANY and ALL meaningful information (INCLUDING ALL METADATA PRESENT IN THE IMAGE) from the image and present it in a structured tabular format as much as possible. 
+                    Each identified table or structured information is a list of dictionaries, and each dictionary represents a single row by mapping column names (keys) to their corresponding cell values (values)."""},
                     {
                         "type": "image_url",
                         "image_url": {"url": f"{base64_img}"}
@@ -189,7 +190,3 @@ if st.session_state.get("next_clicked", False):
     for i, df in enumerate(result_dfs):
         st.write(f"Table {i + 1}")
         st.dataframe(df)
-
-    # if st.button("Re-run"):
-    #     st.session_state["next_clicked"] = False
-    #     st.rerun()
