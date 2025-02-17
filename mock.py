@@ -167,12 +167,12 @@ if st.session_state.get("next_clicked", False):
 
     if file_name.endswith('.png'):
         image = Image.open(uploaded_file)
-        st.image(image, caption="Uploaded Image", use_column_width=True)
+        st.image(image, caption="Uploaded Image")
         base64_img = f"data:image/png;base64,{encode_image2(temp_path)}"
         result_dfs = dfs_of_image(base64_img)
     elif file_name.endswith(('.jpg', '.jpeg')):
         image = Image.open(uploaded_file)
-        st.image(image, caption="Uploaded Image", use_column_width=True)
+        st.image(image, caption="Uploaded Image")
         base64_img = f"data:image/jpeg;base64,{encode_image2(temp_path)}"
         result_dfs = dfs_of_image(base64_img)
     elif file_name.endswith('.pdf'):
