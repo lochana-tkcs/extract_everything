@@ -9,4 +9,3 @@ pymupdf
 pillow
 streamlit-aggrid
 streamlit-pdf-viewer
-apt-get install -y poppler-utils
