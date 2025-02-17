@@ -81,7 +81,7 @@ def extract_from_image(base64_img):
                 "content": [
                     {"type": "text", "text": f"""You will be given an image to analyze. Your task is to extract ANY and ALL meaningful information (INCLUDING ALL METADATA PRESENT IN THE IMAGE) from the image and present it in a structured tabular format as much as possible. 
                     Each identified table or structured information is a list of dictionaries, and each dictionary represents a single row by mapping column names (keys) to their corresponding cell values (values).
-                    If a table is identified in the image, then the table should be outputted as a list of dictionaries where each each dictionary is a row of the table"""},
+                    If a table is identified in the image, then the table should be outputted as a list of dictionaries and each dictionary represents a single row by mapping column names (keys) to their corresponding cell values (values)"""},
                     {
                         "type": "image_url",
                         "image_url": {"url": f"{base64_img}"}
