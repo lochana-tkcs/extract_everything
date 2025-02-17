@@ -79,9 +79,19 @@ def extract_from_image(base64_img):
             {
                 "role": "user",
                 "content": [
-                    {"type": "text", "text": f"""You will be given an image to analyze. Your task is to extract ANY and ALL meaningful information (INCLUDING ALL METADATA PRESENT IN THE IMAGE) from the image and present it in a structured tabular format as much as possible. 
-                    Each identified table or structured information is a list of dictionaries, and each dictionary represents a single row by mapping column names (keys) to their corresponding cell values (values).
-                    If a table is identified in the image, then the table should be outputted as a list of dictionaries and each dictionary represents a single row by mapping column names (keys) to their corresponding cell values (values)"""},
+                    {"type": "text", "text": f"""You will be given an image to analyze. Your task is to extract ALL meaningful information, including ALL metadata present in the image, and present it in a structured format as a list of lists of dictionaries.
+                                                Final Output Structure:
+                                                The final extracted data should be represented as a list of lists of dictionaries.
+                                                Each list represents a category of extracted information (e.g., metadata, tables).
+                                                Each inner list contains dictionaries where each dictionary represents a single record (row), mapping keys (column names) to their values.
+                                                
+                                                Metadata Extraction:
+                                                Store metadata in a list of dictionaries, where:
+                                                Each dictionary represents a metadata field, mapping "Key" to "Value".
+                                                
+                                                Table Extraction:
+                                                If a table is present in the image, extract it as a separate list of dictionaries.
+                                                Each table should be a separate list, where each dictionary represents a single row with column names as keys and corresponding values."""},
                     {
                         "type": "image_url",
                         "image_url": {"url": f"{base64_img}"}
