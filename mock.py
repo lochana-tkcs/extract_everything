@@ -155,7 +155,7 @@ def dfs_of_pdf(pdf_file):
     return result_dfs
 
 
-st.title("PDF/Image to DataFrame Extractor")
+st.title("Extract Everything from PDF/Image")
 uploaded_file = st.file_uploader("Upload an image (PNG, JPG) or a PDF file", type=["png", "jpg", "jpeg", "pdf"])
 
 if uploaded_file is not None:
